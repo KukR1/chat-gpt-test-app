@@ -26,13 +26,12 @@ const generateDescription = async ({
           Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
         },
         body: JSON.stringify({
-          prompt: `Write a recipe for a delicious ${jobTitle} dessert ${
-            industry ? `inspired by ${industry} cuisine` : ''
-          } that includes the following ingredients: ${keyWords}. The recipe should be suitable for ${
+          prompt: `Write a job description for a  ${jobTitle} role 
+          ${industry ? `in the ${industry} industry` : ''} that is around ${
             numWords || 150
-          } words in a ${
-            tone || 'neutral'
-          } tone. Make sure to mention the steps, measurements, and cooking times.`,
+          } words in a ${tone || 'neutral'} tone. ${
+            keyWords ? `Incorporate the following keywords: ${keyWords}.` : ''
+          }. The job position should be described in a way that is SEO friendly, highlighting its unique features and benefits.`,
           max_tokens: estimatedTokens,
           temperature: 0.5,
         }),
