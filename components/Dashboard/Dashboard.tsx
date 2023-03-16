@@ -142,7 +142,11 @@ export default function Dashboard() {
               Output
             </label>
             <textarea
-              rows={100}
+              rows={
+                jobDescription === ''
+                  ? 7
+                  : jobDescription.split('\n').length + 12
+              }
               name="output"
               onChange={(e) => setJobDescription(e.target.value)}
               value={jobDescription}
