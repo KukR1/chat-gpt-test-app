@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { Fredoka } from 'next/font/google';
+import Dashboard from '@/components/Dashboard/Dashboard';
 
 const roboto = Fredoka({
   weight: '400',
@@ -31,6 +32,7 @@ export default function Home() {
             in Seconds
           </p>
         </div>
+        <Dashboard />
       </main>
     </>
   );
